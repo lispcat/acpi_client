@@ -10,6 +10,7 @@ pub enum ChargingState {
     Charging,
     Discharging,
     Full,
+    NotCharging,
 }
 
 /// Metadata pertaining to a battery.
@@ -201,6 +202,8 @@ fn parse_state_from_str(state_str: String) -> Result<ChargingState, AcpiClientEr
         Ok(ChargingState::Discharging)
     } else if state_str == "full" {
         Ok(ChargingState::Full)
+    } else if state_str == "not charging" {
+        Ok(ChargingState::NotCharging)
     } else {
         Err(AcpiClientError::InvalidInput(std::io::Error::new(
             std::io::ErrorKind::Other,
