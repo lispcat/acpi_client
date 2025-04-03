@@ -13,6 +13,7 @@ pub enum Status {
 }
 
 /// Information about AC adapters plugged into the system.
+#[derive(Debug)]
 pub struct ACAdapterInfo {
     /// The name used by ACPI to refer to the adapter.
     pub name: String,

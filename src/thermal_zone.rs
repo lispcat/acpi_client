@@ -4,7 +4,7 @@ use std::path;
 use crate::utils::*;
 
 /// An enumeration of the units with which the applications is displaying temperature data.
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Debug)]
 pub enum Units {
     Fahrenheit,
     Celsius,
@@ -12,6 +12,7 @@ pub enum Units {
 }
 
 /// Information about the temperature at which the system takes action to reduce the temperature of a thermal zone.
+#[derive(Debug)]
 pub struct TripPoint {
     /// A numerical identifier for the trip point.
     pub number: u8,
@@ -24,6 +25,7 @@ pub struct TripPoint {
 }
 
 /// Information about a zone monitored by a temperature sensor.
+#[derive(Debug)]
 pub struct ThermalSensor {
     /// The name used by ACPI to refer to the sensor.
     pub name: String,

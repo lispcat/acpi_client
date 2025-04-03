@@ -5,7 +5,7 @@ use std::time;
 use crate::utils::*;
 
 /// Different possible battery charging states.
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Debug)]
 pub enum ChargingState {
     Charging,
     Discharging,
@@ -13,6 +13,7 @@ pub enum ChargingState {
 }
 
 /// Metadata pertaining to a battery.
+#[derive(Debug)]
 pub struct BatteryInfo {
     /// The name used by ACPI to refer to the device.
     pub name: String,

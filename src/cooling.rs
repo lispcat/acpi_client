@@ -4,7 +4,7 @@ use std::path;
 use crate::utils::*;
 
 /// State information on a cooling device's activity.
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, Debug)]
 pub struct CoolingStatus {
     /// The current level of the cooling device relative to the max_state
     pub current_state: i32,
@@ -13,6 +13,7 @@ pub struct CoolingStatus {
 }
 
 /// Information about cooling devices available to the system.
+#[derive(Debug)]
 pub struct CoolingDevice {
     /// The name used by ACPI to refer to the device.
     pub name: String,
