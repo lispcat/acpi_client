@@ -14,7 +14,7 @@ pub enum ChargingState {
 }
 
 /// Metadata pertaining to a battery.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct BatteryInfo {
     /// The name used by ACPI to refer to the device.
     pub name: String,
